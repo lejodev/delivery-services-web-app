@@ -1,0 +1,24 @@
+.footer {
+  width: 100vw;
+  height: 10vh;
+  background-color: #234;
+  color: aqua;
+  font-size: 2rem;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  // justify-content: center;
+  justify-content: space-around;
+  a {
+    color: rgb(255, 255, 255);
+    &:visited {
+      color: burlywood;
+    }
+  }
+  span {
+    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+  }
+}

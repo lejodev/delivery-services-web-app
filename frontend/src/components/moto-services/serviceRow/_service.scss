@@ -1,0 +1,35 @@
+.row {
+  width: 70vw;
+  height: 6vh;
+  margin: 0.8rem;
+  color: #fff;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  border-left: 1.2rem solid white;
+  padding-left: 1rem;
+}
+.service {
+  cursor: pointer;
+  h1 {
+    margin: 0;
+  }
+  &:hover {
+    background-color: #fff;
+  }
+}
+.taken {
+  border-left: 1.2rem solid rgba(255, 0, 0, 0.767);
+}
+
+.takenByMe {
+  cursor: pointer;
+  border-left: 1.2rem solid rgba(0, 128, 0, 0.753);
+
+  // background-color: aqua;
+  &:hover {
+    background-color: #fff;
+  }
+}

@@ -1,0 +1,23 @@
+.header {
+  height: 10vh;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: aqua;
+  nav {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    .link {
+      text-decoration: none;
+      color: rgb(233, 219, 24);
+      border-bottom: 2px solid #fff;
+      border-top: 2px solid #fff;
+    }
+  }
+}

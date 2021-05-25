@@ -1,0 +1,17 @@
+.moto-services {
+  height: 90vh;
+  width: 100vw;
+  padding-top: 10vh;
+  min-height: 80vh;
+  background-color: #295d85c9;
+  // background: linear-gradient(-45deg, #62a4e6, rgb(24, 39, 53));
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  .logoutBtn {
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    position: absolute;
+  }
+}

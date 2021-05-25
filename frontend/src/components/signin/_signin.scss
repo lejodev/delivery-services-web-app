@@ -1,0 +1,16 @@
+.signin {
+  width: 100vw;
+  height: 90vh;
+  background: linear-gradient(-45deg, #62a4e6, rgb(24, 39, 53));
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  .container {
+    width: 35%;
+    padding: 4rem;
+    background-color: honeydew;
+    box-sizing: border-box;
+    border-radius: 2rem;
+  }
+}
