@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./_moto-services.scss";
 import Service from "./serviceRow/Service";
+
 import { Button } from "react-bootstrap";
 import { isExpired, decodeToken } from "react-jwt";
 
@@ -12,7 +13,38 @@ const MotoServices = (props) => {
     const currentToken = await localStorage.getItem("token");
     const decodedToken = await decodeToken(currentToken);
     setCurrentUser(decodedToken.id);
+    fetch(`/motorcyclist/`, {
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((resp) => resp.json())
+      .then((services) => {
+        if (services.length === 0) {
+          fetch(`/motorcyclist/`, {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+              Authorization: `bearer ${localStorage.getItem("token")}`,
+            },
+          })
+            .then((resp) => {
+              console.log(resp);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        } else {
+          console.log("ALREADY EXISTS");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
+
+  // const getServices = () => {};
 
   const logout = () => {
     localStorage.setItem("token", null);
@@ -40,8 +72,24 @@ const MotoServices = (props) => {
   };
   return (
     <div className="moto-services">
+      <section className="conventions">
+        <div className="item">
+          <div className="circle appointment-free"></div>
+          <p className="text">Free </p>
+        </div>
+        <div className="item">
+          <div className="circle appointment-taken"></div>
+          <p className="text">Busy </p>
+        </div>
+        <div className="item">
+          <div className="circle appointment-mine"></div>
+          <p className="text">Mine</p>
+        </div>
+      </section>
       <div className="servicesContainer">
-        <Button onClick={logout} className="logoutBtn">Logout</Button>
+        <Button onClick={logout} className="logoutBtn">
+          Logout
+        </Button>
         {doRows().map((hour) => (
           <Service
             key={hour}

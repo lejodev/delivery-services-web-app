@@ -12,7 +12,7 @@ const Header = (props) => {
   return (
     <header className="header">
       <nav>
-        <Link to="/" className="link">DELIVERY SERVICES</Link>
+        <Link to="/" className="link">APPOINTMENTS</Link>
       </nav>
     </header>
   );

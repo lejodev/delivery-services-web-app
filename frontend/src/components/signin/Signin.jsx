@@ -7,7 +7,6 @@ const Signin = (props) => {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (data) => {
-    console.table(data);
     if (data.password === data.repeatPassword) {
       const BODY = {
         userName: data.username,

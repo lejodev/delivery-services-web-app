@@ -11,7 +11,6 @@ const Service = (props) => {
 
   var currentUser;
   useEffect(async () => {
-    console.log("props.availability", props.availability);
     const decodedToken = await decodeToken(localStorage.getItem("token"));
     currentUser = decodedToken.id;
     fetch(`/motorcyclist/serviceStatus/${hour}`, {
@@ -32,7 +31,6 @@ const Service = (props) => {
             setTakenByMe(false);
             setCanSelect(false);
           }
-          console.log(resp[0].takenBy == currentUser);
         } else {
           setTaken(false);
           setTakenByMe(false);
@@ -43,11 +41,8 @@ const Service = (props) => {
 
   const handleClick = async () => {
     if (canSelect) {
-      console.log(canSelect);
       const serviceId = await (async () => {
         if (takenByMe) {
-          console.log("currentServiceIdasasasasas", currentServiceId);
-          console.log(currentServiceId);
           setTaken(false);
           setTakenByMe(false);
           setCanSelect(true);
@@ -78,7 +73,6 @@ const Service = (props) => {
           );
           if (availableServiceRequest.status == 200) {
             const serviceId = await availableServiceRequest.json();
-            console.log("serviceId", serviceId.id);
             const BODY = {
               userId: await props.currentUser,
               rowKey: hour,
@@ -95,8 +89,6 @@ const Service = (props) => {
               }
             );
             const result = await selectAvailableService.json();
-            console.log(result);
-            console.log(result.id);
             setCurrentServiceId(serviceId.id);
             setTaken(true);
             setTakenByMe(true);

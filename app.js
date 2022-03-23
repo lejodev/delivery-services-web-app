@@ -11,9 +11,8 @@ const cors = require("cors");
 require("dotenv/config");
 
 const JWT_SECRET = process.env.JWTSecret;
-console.log(JWT_SECRET, process.env.DB_CONNECTION);
 
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => {
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
   console.log("Connected to the database");
 });
 

@@ -27,8 +27,6 @@ const Login = (props) => {
 
       if (request.status === 200) {
         const token = await request.json();
-        console.log(token.token);
-        console.log(request);
         localStorage.setItem("token", token.token);
         return props.history.push("/services");
       } else {

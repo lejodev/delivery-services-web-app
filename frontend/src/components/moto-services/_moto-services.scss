@@ -4,14 +4,49 @@
   padding-top: 10vh;
   min-height: 80vh;
   background-color: #295d85c9;
-  // background: linear-gradient(-45deg, #62a4e6, rgb(24, 39, 53));
+  background: linear-gradient(-45deg, #62a4e6, rgb(24, 39, 53));
   display: flex;
   flex-flow: column;
   align-items: center;
+  position: relative;
   .logoutBtn {
     top: 0;
     right: 0;
     margin: 1rem;
     position: absolute;
+  }
+  .conventions {
+    position: absolute;
+    width: fit-content;
+    padding: 0.5em 2em 0.5em 0.5em;
+    border-radius: 0 2em 2em 0;
+    // border: 2px solid black;
+    left: 0;
+    margin-left: 2vw;
+    .item {
+      display: flex;
+      align-items: center;
+      .circle {
+        width: 1.5em;
+        height: 1.5em;
+        background-color: #fff;
+        border-radius: 50%;
+      }
+      .appointment-free {
+        background-color: #fff;
+      }
+      .appointment-taken {
+        background-color: red;
+      }
+      .appointment-mine {
+        background-color: green;
+      }
+      .text {
+        margin: 0.5em 0 0.5em 0.3em;
+        font-size: large;
+        color: white;
+        font-weight: bold;
+      }
+    }
   }
 }
