@@ -8,11 +8,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js",
     "build": "cd frontend && npm run build",
-    "start": "node app.js",
     "install-client": "cd frontend && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build"
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "dev": "nodemon app.js",
+    "develop": "concurrently --kill-others-on-fail \"npm run dev\" \"npm run start --prefix client\"",
+    "start": "concurrently --kill-others-on-fail \"npm run dev\" \"npm run start --prefix client\""
   },
   "author": "",
   "license": "ISC",
